@@ -1,0 +1,255 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+} */
+
+body 
+{ 
+  background-color:#ededed; font:normal 12px/18px Arial, Helvetica, sans-serif; 
+}
+h1 
+{ 
+  display:block; width:600px; margin:20px auto; padding-bottom:20px; font:normal 24px/30px Georgia, "Times New Roman", Times, serif; color:#333; text-shadow: 1px 2px 3px #ccc; border-bottom:1px solid #cbcbcb; 
+}
+#container 
+{ 
+  width:600px; margin:0 auto; 
+}
+#myCanvas 
+{ 
+  background:rgb(0, 0, 0); border:1px solid #cbcbcb; 
+}
+#nav 
+{ 
+  display:block; width:100%; text-align:center; 
+}
+#nav li 
+{ 
+  display:block; font-weight:bold; line-height:21px; text-shadow:1px 1px 1px #fff; width:100px; height:21px; padding:5px; margin:0 10px; background:#e0e0e0; border:1px solid #ccc; -moz-border-radius:4px;-webkit-border-radius:4px; border-radius:4px; float:left; 
+}
+#nav li a 
+{ 
+  color:#000; display:block; text-decoration:none; width:100%; height:100%; 
+}
+h1, h2, button, option {
+  font-family: courier, monospace;
+  font-weight: lighter;
+  text-align: center;
+}
+#menu-toggle{
+  display: block;
+  top: 30px;
+  left: 30px;
+  z-index: 1;
+}
+#menu-toggle input{
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+#menu-toggle span{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background-color: gray;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu-toggle span:first-child{
+  transform-origin: 0% 0%;
+}
+#menu-toggle span:nth-last-child(2){
+  transform-origin: 0% 100%;
+}
+#menu-toggle input:checked ~ span{
+  transform: rotate(45deg) translate(-2px, -1px);
+}
+#menu-toggle input:checked ~ span:nth-last-child(2){
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menu-toggle input:checked ~ span:nth-last-child(3){
+  opacity: 0;
+}
+#menu{
+  font-family: Courier;
+  position: absolute;
+  list-style: none;
+  background-color: lightgray;
+  width: 275px;
+  padding: 10px 0;
+  transform-origin: 0% 0%;
+  transform: translate(-120%, 0%);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li{
+  padding: 20px;
+}
+
+#menu-toggle input:checked ~ #menu{
+  transform: translate(10px);
+}
+
+a{
+  text-decoration: none;
+  color: gray;
+}
+
+a:hover{
+  color: black;
+}
+
+button:hover {
+  background: #333;
+}
+
+.container {
+  display: flex;
+}
+
+.flex {
+  flex: 1;
+}
+
+.flex25 {
+  width: 25%;
+}
+
+.flex23 {
+  width: 23%;
+}
+
+.flex33 {
+  width: 33%;
+}
+
+.circle-button {
+  border-radius: 50px;
+  line-height: 100px;
+  border: none;
+  display: block;
+  padding-top: 10px;
+}
+
+.knob {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  text-align: center;
+  line-height: normal;
+  font-size: 0.8em;
+}
+
+#knob1 {
+  background: rgba(251, 228, 204, .5);
+}
+
+#knob1:hover {
+  background: rgb(251, 228, 204);
+}
+
+#knob2 {
+  background: rgba(85, 141, 233, .5);
+}
+
+#knob2:hover {
+  background: rgb(85, 141, 233);
+}
+
+#knob3 {
+  background: rgba(11, 83, 147, .5);
+}
+
+#knob3:hover {
+  background: rgb(255, 255, 255);
+}
+
+#knob5 {
+  background: rgb(118, 119, 121);
+}
+#knob5:hover {
+  background: rgb(11, 83, 147);
+}
+.sample {
+  margin: 20px;
+}
+
+.sample:hover {
+  background: orange;
+}
+
+.blackKey {
+  width:60px;
+  height:60px;
+  background:#000;
+  margin: 12px;
+  color: white;
+  text-align: center;
+  line-height: normal;
+  font-size: 0.8em;
+}
+
+.blackKeyLeft {
+  margin-right: 70px;
+}
+
+.whiteKey {
+  width:60px;
+  height:200px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 30px;
+  margin: 10px;
+}
+
+.whiteKey:hover {
+  background: #F2F2F2;
+}
+.canvasHolder{
+  align-items: center;
+  justify-content: center;
+}
+#viewport{
+  width: 300px;
+}
+
+select {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 10px;
+}
+
+.selector {
+  padding: 40px;
+}
+
+#nextEl {
+  margin-left: 10px;
+}
+
+#nextEl:hover {
+  background: blue;
+}
+
+footer {
+  width: 100%;
+  height: 10em;
+}
